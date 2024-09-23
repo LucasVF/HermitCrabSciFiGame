@@ -36,12 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\View\ViewController.cs" />
-     <Compile Include="Assets\Scripts\View\MainMenuView.cs" />
-     <Compile Include="Assets\Scripts\View\Interface\IView.cs" />
      <Compile Include="Assets\Scripts\View\GameView.cs" />
-     <Compile Include="Assets\Scripts\View\ResultsView.cs" />
+     <Compile Include="Assets\Scripts\View\ViewController.cs" />
      <Compile Include="Assets\Scripts\View\Abstract\BaseView.cs" />
+     <Compile Include="Assets\Scripts\View\MainMenuView.cs" />
+     <Compile Include="Assets\Scripts\View\ResultsView.cs" />
+     <Compile Include="Assets\Scripts\View\Interface\IView.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity Projects\Unity Hub\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

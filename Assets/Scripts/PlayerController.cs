@@ -7,15 +7,16 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 2f;
     public float jumpForce = 3.5f;
     public float slideDuration = 0.1f;
-    public LayerMask groundLayer;
-    
+    public LayerMask groundLayer;    
     private Rigidbody2D rb;
-
     private BoxCollider2D slideBoxCollider;
     private BoxCollider2D defaultBoxCollider;
     private bool isGrounded;
     private bool isSliding = false;
     private bool isActive = false;
+
+    [SerializeField]
+    Animator _animator;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if(isGrounded && isActive){
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            UpdateAnimation("Jump");
         }        
     }
 
@@ -73,10 +75,20 @@ public class PlayerController : MonoBehaviour
         isSliding = newIsSliding;
         defaultBoxCollider.enabled = !isSliding;
         slideBoxCollider.enabled = isSliding;
+        if(isActive)
+        {
+            UpdateAnimation(newIsSliding ? "Slide": "Run");
+        }        
     }
 
     public void TurnActive(bool activeState)
     {
         isActive = activeState;
+        UpdateAnimation(activeState ? "Run": "Iddle");
+    }
+
+    private void UpdateAnimation(string animName)
+    {
+        _animator.Play(animName);
     }
 }

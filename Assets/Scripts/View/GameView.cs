@@ -24,16 +24,25 @@ public class GameView : BaseView
     StageFactory _stageFactory;
 
     GameController _gameController;
+    int _roomsCleared = -1;
 
     public override void SetUpView()
     {
         if(_gameController == null){
             _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
-        _gameController.ResetGame();
-        _scoreText.text = "Rooms Cleared: "+_gameController.RoomsCleared();
+        _gameController.ResetGame();        
         _player.transform.position = _startPostion;
         _stageFactory.SetUpStage(_stage);
+    }
+
+    void Update()
+    {
+        if(_gameController != null && _roomsCleared != _gameController.RoomsCleared())
+        {
+            _roomsCleared = _gameController.RoomsCleared();
+            _scoreText.text = "Rooms Cleared: "+_roomsCleared;
+        }        
     }
 
     public int CountRooms()

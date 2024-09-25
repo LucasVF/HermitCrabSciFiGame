@@ -11,6 +11,6 @@ public class ObjectiveController : MonoBehaviour
         if(_gameController == null){
             _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
-        _gameController.LevelCompleted();
+        _gameController.RoomCompleted();
     }
 }

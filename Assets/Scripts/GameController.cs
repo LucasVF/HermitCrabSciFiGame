@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
     bool _isVictorious = false;
     int _roomsCleared = 0;
+    GameView _gameView;
+
     [SerializeField]
     ViewController _viewController;
     
@@ -24,11 +26,19 @@ public class GameController : MonoBehaviour
         return _roomsCleared;
     }
 
-    public void LevelCompleted()
+    public void RoomCompleted()
     {
-        _isVictorious = true;
+        if(_gameView == null){
+            _gameView = GameObject.FindGameObjectWithTag("GameView").GetComponent<GameView>();
+        }
         _roomsCleared++;
-        EndGame();
+        if(_roomsCleared == _gameView.CountRooms()){
+            _isVictorious = true;
+            EndGame();
+        }else
+        {
+            _gameView.NextRoom();
+        }        
     }
 
     public void PlayerHit()

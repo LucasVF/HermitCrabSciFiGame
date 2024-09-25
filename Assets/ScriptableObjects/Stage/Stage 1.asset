@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b6a67b89f43314ebd0f128b85bfd19, type: 3}
+  m_Name: Stage 1
+  m_EditorClassIdentifier: 
+  id: 1
+  rows:
+  - {fileID: 11400000, guid: 9ffb80e831775024080723add0183cd2, type: 2}
+  - {fileID: 11400000, guid: 517bcd9333182734d9a552a996f3f04f, type: 2}
+  speedIncreasePerRowCompleted: 0

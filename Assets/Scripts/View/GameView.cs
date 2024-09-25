@@ -18,6 +18,11 @@ public class GameView : BaseView
     [SerializeField]
     Text _scoreText;
 
+    [SerializeField]
+    StageScriptableObject _stage;
+    [SerializeField]
+    StageFactory _stageFactory;
+
     GameController _gameController;
 
     public override void SetUpView()
@@ -28,6 +33,17 @@ public class GameView : BaseView
         _gameController.ResetGame();
         _scoreText.text = "Rooms Cleared: "+_gameController.RoomsCleared();
         _player.transform.position = _startPostion;
+        _stageFactory.SetUpStage(_stage);
+    }
+
+    public int CountRooms()
+    {
+        return _stage.rows.Count;
+    }
+    
+    public void NextRoom()
+    {
+         _player.transform.position = _startPostion - new Vector3(0f,1.93f,0f);
     }
 
     void OnEnable()

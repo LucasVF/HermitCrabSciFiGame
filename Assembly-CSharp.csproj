@@ -43,7 +43,9 @@
      <Compile Include="Assets\Scripts\View\ResultsView.cs" />
      <Compile Include="Assets\Scripts\View\Interface\IView.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\ObjectiveController.cs" />
+     <Compile Include="Assets\Scripts\ObstaclesController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity Projects\Unity Hub\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

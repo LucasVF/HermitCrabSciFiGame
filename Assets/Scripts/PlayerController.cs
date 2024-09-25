@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D defaultBoxCollider;
     private bool isGrounded;
     private bool isSliding = false;
+    private bool isActive = false;
 
     void Start()
     {
@@ -34,7 +35,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Move the character to the right
-        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        if(isActive)
+        {
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        }
 
         // Check if the character is grounded
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, defaultBoxCollider.bounds.size.y / 2 + 0.1f, groundLayer);
@@ -42,14 +46,14 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if(isGrounded){
+        if(isGrounded && isActive){
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }        
     }
 
     public void Slide()
     {
-        if(!isSliding && isGrounded)
+        if(!isSliding && isGrounded && isActive)
         {
             StartCoroutine(SlideCoroutine());
         }
@@ -69,5 +73,10 @@ public class PlayerController : MonoBehaviour
         isSliding = newIsSliding;
         defaultBoxCollider.enabled = !isSliding;
         slideBoxCollider.enabled = isSliding;
+    }
+
+    public void TurnActive(bool activeState)
+    {
+        isActive = activeState;
     }
 }

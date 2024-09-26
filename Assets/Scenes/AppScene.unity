@@ -1800,7 +1800,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 417e5f12acd7d004f94a9b5902d34d53, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2787,7 +2787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710702027464, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710702027467, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_RootOrder
@@ -2855,11 +2855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710884807370, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 260.66376
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710884807370, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -107.23267
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710884807373, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3003,11 +3003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174707711816294418, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 260.66376
       objectReference: {fileID: 0}
     - target: {fileID: 9174707711816294418, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -291.69803
       objectReference: {fileID: 0}
     - target: {fileID: 9174707711816294421, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

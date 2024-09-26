@@ -62,6 +62,7 @@ public class GameView : BaseView
 
     private IEnumerator WaitBeforeStart(){
          _player.TurnActive(false);
+         AudioSingleton.Instance.TriggerCountdownAudio();
          _timerText.text = "3";
         yield return new WaitForSeconds(1f);
         _timerText.text = "2";

@@ -34,5 +34,12 @@ public class ResultsView : BaseView
         _outlineMainResultText.effectColor = isVictorious ? Color.green : Color.red;
         _victoriousImage.SetActive(isVictorious);
         _loserImage.SetActive(!isVictorious);
+        if(isVictorious)
+        {
+            AudioSingleton.Instance.TriggerSuccessAudio();
+        }else
+        {
+            AudioSingleton.Instance.TriggerFailureAudio();
+        }
     }
 }

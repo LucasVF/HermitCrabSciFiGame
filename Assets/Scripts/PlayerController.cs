@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if(isGrounded && isActive){
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             UpdateAnimation("Jump");
+            AudioSingleton.Instance.TriggerJumpAudio();
         }        
     }
 
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private System.Collections.IEnumerator SlideCoroutine()
     {
         UpdateIsSliding(true);
+
+        AudioSingleton.Instance.TriggerSlideAudio();
 
         yield return new WaitForSeconds(slideDuration);
 

@@ -20,6 +20,7 @@ public class ViewController : MonoBehaviour
                 _dictViews.Add(view.GetName(), view);
             }            
         }
+        AudioSingleton.Instance.TriggerThemeAudio();
         ChangeViewTo(ViewNames.MainMenu);
     }
 

@@ -382,7 +382,7 @@ RectTransform:
   m_GameObject: {fileID: 156872526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4123763, y: 1.4123763, z: 1.4123763}
   m_Children:
   - {fileID: 2000947609}
   - {fileID: 759194067}
@@ -391,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 185}
+  m_AnchoredPosition: {x: -4.1233, y: 241}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156872528
@@ -736,7 +736,7 @@ RectTransform:
   m_GameObject: {fileID: 577750016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3360226, y: 2.25483, z: 2.4711277}
+  m_LocalScale: {x: 4.2470903, y: 2.870624, z: 3.1459928}
   m_Children: []
   m_Father: {fileID: 1001780052}
   m_RootOrder: 0
@@ -1342,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2564,6 +2564,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 7.1001
       objectReference: {fileID: 0}
+    - target: {fileID: 412059774692480640, guid: 29bee55c83373b849a7cb8af65d533f0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 412059775171713496, guid: 29bee55c83373b849a7cb8af65d533f0, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 90
@@ -2780,6 +2784,10 @@ PrefabInstance:
     - target: {fileID: 9174707710223348157, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_Spacing
       value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174707710266416563, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174707710702027464, guid: 24f03c59acc8a4a4aad1f7d2f25b6104, type: 3}
       propertyPath: m_Name

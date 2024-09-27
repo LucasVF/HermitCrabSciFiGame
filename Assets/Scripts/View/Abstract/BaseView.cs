@@ -1,4 +1,6 @@
 using UnityEngine;
+
+//Base Class for every View class 
 public abstract class BaseView : MonoBehaviour, IView {
     public abstract void SetUpView();
     public abstract ViewNames GetName();

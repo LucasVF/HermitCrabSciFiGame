@@ -2,10 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+//View responsible for Setting Up Gameplay View
 public class GameView : BaseView
 {
     public override ViewNames GetName() => ViewNames.Game;
 
+    //Where the player will start each Stage
     [SerializeField]
     Vector3 _startPostion;
     [SerializeField]
@@ -16,58 +18,32 @@ public class GameView : BaseView
     [SerializeField]
     Text _scoreText;
 
-    [SerializeField]
-    StageScriptableObject _stage;
-    [SerializeField]
-    StageFactory _stageFactory;
-
     GameController _gameController;
-    int _roomsCleared = -1;
 
+    public Vector3 StartPosition() => _startPostion;
+    public PlayerController GetPlayer() => _player;
+
+    //Method that sets up the game View, positioning the player at start position and calling Game Controller to create the Stage and reset Game Info
     public override void SetUpView()
     {
         if(_gameController == null){
-            _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+            _gameController = GameObject.FindGameObjectWithTag(Constants.GameControllerTag).GetComponent<GameController>();
+            _gameController.AssignGameView(this);
         }
         _gameController.ResetGame();        
         _player.transform.position = _startPostion;
-        _stageFactory.SetUpStage(_stage);
+        _gameController.CreateStage();
     }
 
-    void Update()
+    //Method to update Score Text
+    public void UpdateScoreText(int rowCompleted)
     {
-        if(_gameController != null && _roomsCleared != _gameController.RoomsCleared())
-        {
-            _roomsCleared = _gameController.RoomsCleared();
-            _scoreText.text = "Rooms Cleared: "+_roomsCleared;
-        }        
+        _scoreText.text = Constants.ScoreText + rowCompleted;
     }
 
-    public int CountRooms()
-    {
-        return _stage.rows.Count;
-    }
-    
-    public void NextRoom()
-    {
-         _player.transform.position = _startPostion - new Vector3(0f,1.93f,0f);
-    }
-
+    //When Game View is enabled, Game Controller is called to initiate Countdown before game starts
     void OnEnable()
-    {        
-        StartCoroutine(WaitBeforeStart());
-    }
-
-    private IEnumerator WaitBeforeStart(){
-         _player.TurnActive(false);
-         AudioSingleton.Instance.TriggerCountdownAudio();
-         _timerText.text = "3";
-        yield return new WaitForSeconds(1f);
-        _timerText.text = "2";
-        yield return new WaitForSeconds(1f);
-        _timerText.text = "1";
-        yield return new WaitForSeconds(1f);
-        _timerText.text = "";
-        _player.TurnActive(true);
-    }
+    {  
+        StartCoroutine(_gameController.WaitBeforeStart(_timerText));
+    }   
 }

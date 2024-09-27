@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ScriptableObjects\RowScriptableObject.cs" />
      <Compile Include="Assets\Scripts\StageFactory.cs" />
      <Compile Include="Assets\Scripts\AudioSingleton.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity Projects\Unity Hub\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -24,6 +24,12 @@ public class GameController : MonoBehaviour
     StageFactory _stageFactory;
 
     public void AssignGameView(GameView gameView) => _gameView = gameView;
+
+    void Start(){
+        _viewController.Initiate();
+        AudioSingleton.Instance.TriggerThemeAudio();
+        _viewController.GoToMainMenu(); 
+    }
     
     public bool IsVictorious()
     {

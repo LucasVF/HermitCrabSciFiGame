@@ -11,7 +11,7 @@ public class ViewController : MonoBehaviour
     Dictionary<ViewNames, IView> _dictViews = new Dictionary<ViewNames, IView>();
     IView _curentView;
 
-    void Start(){
+    public void Initiate(){
         foreach(IView view in _views){
             view.HideView();
             if(_dictViews.ContainsKey(view.GetName())){
@@ -19,9 +19,7 @@ public class ViewController : MonoBehaviour
             }else{
                 _dictViews.Add(view.GetName(), view);
             }            
-        }
-        AudioSingleton.Instance.TriggerThemeAudio();
-        ChangeViewTo(ViewNames.MainMenu);
+        }        
     }
 
     public void GoToGame() => ChangeViewTo(ViewNames.Game);
